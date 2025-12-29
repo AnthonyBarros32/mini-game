@@ -103,3 +103,39 @@ button:active {
   text-align: center;
   box-shadow: 0 10px 25px rgba(194, 24, 91, 0.3);
 }
+
+/* 📱 Ajustes para celular */
+@media (max-width: 480px) {
+
+  body {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16.5px;
+  }
+
+  button, .btn {
+    font-size: 17px;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .message {
+    font-size: 16px;
+    padding: 18px;
+  }
+
+  .message-final {
+    font-size: 17px;
+  }
+}
