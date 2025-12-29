@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manicure 💅</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>💅 Manicure</h2>
+  <p>Elige el color perfecto</p>
+
+ <button onclick="elegir('tradicional_manos')">Tradicional manos</button>
+<button onclick="elegir('semipermanente_manos')">Semipermanente manos</button>
+<button onclick="elegir('press_on')">Press on</button>
+<button onclick="elegir('acrilico_forrado')">Acrílico forrado</button>
+<button onclick="elegir('acrilico_esculpido')">Acrílico esculpido</button>
+
+
+  <p class="message" id="msg"></p>
+
+  <a href="pedicure.html" class="btn hidden" id="next">
+    Siguiente ➡️
+  </a>
+</div>
+
+<script>
+ const mensajes = {
+  tradicional_manos:
+    "El manicure tradicional refleja tu base sólida, tu paciencia y el amor con el que cuidas cada detalle desde lo más simple 💅",
+
+  semipermanente_manos:
+    "El semipermanente habla de tu compromiso con la calidad y la durabilidad. Lo haces bien y lo haces para que perdure ✨",
+
+  press_on:
+    "Los press on muestran tu creatividad y adaptación. Siempre encuentras la forma de ofrecer belleza sin perder tu esencia 💖",
+
+  acrilico_forrado:
+    "El acrílico forrado refleja tu técnica, tu pulso firme y tu dedicación por hacer un trabajo limpio y elegante 👌",
+
+  acrilico_esculpido:
+    "El acrílico esculpido demuestra tu nivel profesional, tu esfuerzo constante y todo lo que has aprendido con disciplina 💎"
+};
+
+function elegir(opcion) {
+  const msg = document.getElementById("msg");
+
+  msg.innerText = mensajes[opcion];
+
+  // Activar animación y visibilidad
+  msg.classList.remove("show");
+  void msg.offsetWidth; // reinicia animación
+  msg.classList.add("show");
+
+  document.getElementById("next").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

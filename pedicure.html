@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedicure 🦶</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>🦶 Pedicure</h2>
+  <p>Cuidado que se siente y se agradece</p>
+
+  <button onclick="elegir('tradicional_pies')">Tradicional pies</button>
+  <button onclick="elegir('semipermanente_pies')">Semipermanente pies</button>
+
+  <p class="message" id="msg"></p>
+
+  <a href="maquillaje.html" class="btn hidden" id="next">
+    Siguiente ➡️
+  </a>
+</div>
+
+<script>
+const mensajes = {
+  tradicional_pies:
+    "El pedicure tradicional refleja tu humildad y tu dedicación por hacer bien el trabajo. Te tomas el tiempo de cuidar, limpiar y embellecer con amor 🦶",
+
+  semipermanente_pies:
+    "El pedicure semipermanente habla de tu compromiso con la calidad y el bienestar. Buscas que cada persona se sienta cómoda, segura y confiada por más tiempo ✨"
+};
+
+function elegir(opcion) {
+  const msg = document.getElementById("msg");
+
+  msg.innerText = mensajes[opcion];
+
+  // Activar animación y visibilidad
+  msg.classList.remove("show");
+  void msg.offsetWidth; // reinicia animación
+  msg.classList.add("show");
+
+  document.getElementById("next").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

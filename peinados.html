@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Peinados 💇‍♀️</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>💇‍♀️ Peinados</h2>
+    <p>Arte en cada estilo</p>
+
+   <button onclick="elegir('ondas')">Ondas 🌊</button>
+<button onclick="elegir('recogido')">Recogido 👑</button>
+<button onclick="elegir('trenzas')">Trenzas 🌸</button>
+<button onclick="elegir('laminado')">Laminado ✨</button>
+<button onclick="elegir('cepillado')">Cepillado 💖</button>
+
+<p class="message" id="msg"></p>
+
+<a href="final.html" class="btn hidden" id="next">
+  Ver sorpresa 🎁
+</a>
+
+  </div>
+
+  <script>
+ const mensajes = {
+  ondas:
+    "Las ondas reflejan tu libertad creativa y tu estilo natural para hacer que cada persona se sienta hermosa 🌊",
+
+  recogido:
+    "El recogido demuestra tu precisión, tu elegancia y la seguridad con la que trabajas cada detalle 👑",
+
+  trenzas:
+    "Las trenzas representan paciencia, dedicación y cariño. Cada cruce lleva tiempo y amor 🌸",
+
+  laminado:
+    "El laminado capilar muestra tu compromiso con el cuidado y la salud del cabello, no solo con la apariencia ✨",
+
+  cepillado:
+    "El cepillado refleja constancia, técnica y disciplina. Lo haces ver simple, pero sé todo lo que hay detrás 💖"
+};
+
+function elegir(opcion) {
+  const msg = document.getElementById("msg");
+
+  msg.innerText = mensajes[opcion];
+
+  // Activar animación y visibilidad
+  msg.classList.remove("show");
+  void msg.offsetWidth; // reinicia animación
+  msg.classList.add("show");
+
+  document.getElementById("next").classList.remove("hidden");
+}
+  </script>
+
+</body>
+</html>

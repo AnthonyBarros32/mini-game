@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Maquillaje 💄</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>💄 Maquillaje</h2>
+    <p>Resalta la belleza natural</p>
+
+   <button onclick="elegir('social')">Social</button>
+<button onclick="elegir('matrimonio')">Matrimonio</button>
+
+    <p class="message" id="msg"></p>
+
+    <a href="peinados.html" class="btn hidden" id="next">
+      Siguiente ➡️
+    </a>
+  </div>
+
+  <script>
+const mensajes = {
+  social:
+    "El maquillaje social refleja tu sensibilidad para resaltar la belleza sin exagerar. Sabes escuchar, observar y crear armonía 💄",
+
+  matrimonio:
+    "El maquillaje para matrimonio demuestra la confianza que depositan en ti en uno de los días más importantes de sus vidas. Eso habla de tu talento y tu corazón 💍"
+};
+
+function elegir(opcion) {
+  const msg = document.getElementById("msg");
+
+  msg.innerText = mensajes[opcion];
+
+  // Activar animación y visibilidad
+  msg.classList.remove("show");
+  void msg.offsetWidth; // reinicia animación
+  msg.classList.add("show");
+
+  document.getElementById("next").classList.remove("hidden");
+}
+  </script>
+
+</body>
+</html>
